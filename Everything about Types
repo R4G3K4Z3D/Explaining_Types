@@ -1,0 +1,381 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Stock types file, ready to be replaced with the items you have.
+
+Copy from line 5 to line 35 for the whole types. If you are just adding to an already existing types file then you will copy everything from line 7 to line 34.
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<types>
+	<type name="CodeLock">
+		<nominal>80</nominal>
+		<max>100</max>
+		<min>50</min>
+		<lifetime>7200</lifetime>
+		<restock>0</restock>
+		<quantmin>-1</quantmin>
+		<quantmax>-1</quantmax>
+		<cost>100</cost>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
+		<category name="tools"/>
+		<category name="containers"/>
+		<usage name="Military"/>
+		<usage name="Police"/>
+		<usage name="Medic"/>
+		<usage name="Firefighter"/>
+		<usage name="Hunting" />
+		<usage name="Industrial"/>
+		<usage name="Farm"/>
+		<usage name="Town"/>
+		<usage name="Village"/>
+		<value name="Tier1"/>
+		<value name="Tier2"/>
+		<value name="Tier3"/>
+		<value name="Tier4"/>
+		<value name="Tier5"/>
+		<value name="Tier6"/>
+	</type>
+</types>
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Here is the detailed explanation for each line of this updated XML:
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> -------------------------------------------------------------------- This is the XML declaration, specifying the XML version, the character encoding (UTF-8), and that this file is standalone (it doesn’t rely on external resources).
+<types> -------------------------------------------------------------------------------------------------------------------- The root element that encompasses all item types defined in the file.
+<type name="CodeLock"> ----------------------------------------------------------------------------------------------------- Starts the definition for the "CodeLock" item, setting its unique name as "CodeLock."
+<nominal>80</nominal> ------------------------------------------------------------------------------------------------------ Specifies the target number of "CodeLock" items that should exist in the game world at any given time.
+<max>100</max> ------------------------------------------------------------------------------------------------------------- Indicates the maximum number of "CodeLock" items that can exist in the game world simultaneously. This acts as a population cap.
+<min>50</min> -------------------------------------------------------------------------------------------------------------- Sets the minimum number of "CodeLock" items that should exist in the game world. If the count drops below this, restocking logic (if enabled) might kick in.
+<lifetime>7200</lifetime> -------------------------------------------------------------------------------------------------- Defines how long, in seconds, a "CodeLock" item remains in the world before despawning if not interacted with (7200 seconds = 2 hours).
+<restock>0</restock> ------------------------------------------------------------------------------------------------------- Specifies how frequently the "CodeLock" is restocked. "0" means no automatic restocking will occur.
+<quantmin>-1</quantmin> ---------------------------------------------------------------------------------------------------- Represents the minimum quantity of the item when spawned. "-1" typically means no restriction is applied.
+<quantmax>-1</quantmax> ---------------------------------------------------------------------------------------------------- Similar to <quantmin>, this defines the maximum quantity of the item when spawned. "-1" means no restriction is applied.
+<cost>100</cost> ----------------------------------------------------------------------------------------------------------- Represents the cost or value of the item, which can influence trade, spawning chances, or crafting.
+<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/> --------------- Provides flags that control the behavior of the item:
+---------------------------------------------------------------------------------------------------------------------------- count_in_cargo="0": Excluded from cargo container counts.
+---------------------------------------------------------------------------------------------------------------------------- count_in_hoarder="0": Excluded from hoarder item counts.
+---------------------------------------------------------------------------------------------------------------------------- count_in_map="1": Included in map-wide population counts.
+---------------------------------------------------------------------------------------------------------------------------- count_in_player="0": Excluded from counts in player inventories.
+---------------------------------------------------------------------------------------------------------------------------- crafted="0": Indicates the item cannot be crafted.
+---------------------------------------------------------------------------------------------------------------------------- deloot="0": Prevents automatic removal of the item by de-loot mechanisms.
+<category name="tools"/> --------------------------------------------------------------------------------------------------- Categorizes the item under "tools" and "containers," which may determine how the item is organized or managed in the game.
+<usage name="Military"/> --------------------------------------------------------------------------------------------------- Defines various thematic or geographical spawning contexts for the item. For example, "Military" suggests the item could spawn in military areas, while "Village" suggests it could appear in village environments.
+<value name="Tier1"/> ------------------------------------------------------------------------------------------------------ <value name="Tier1"/> through <value name="Tier6"/>: Represents tiers associated with the item, which may denote rarity, difficulty to obtain, or specific regions where it can spawn.
+</type> -------------------------------------------------------------------------------------------------------------------- Closes the definition for the "CodeLock" type.
+</types> ------------------------------------------------------------------------------------------------------------------- Ends the root <types> element, signifying the conclusion of all type definitions in this file.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Here is a super detailed explanation of each line and individual tags and items that you see in the file. Starting with the first line.
+
+
+Breakdown of Components:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+This line is the XML declaration, which is always placed at the very beginning of an XML document. It serves several important functions:
+    <?xml:
+This marks the start of the XML declaration.
+It tells the system that the document adheres to the XML format.
+    version="1.0":
+Specifies the XML version being used.
+In this case, it is version 1.0, which is the most widely used and standard version of XML.
+    encoding="UTF-8":
+Defines the character encoding for the document, which determines how characters are stored and interpreted.
+UTF-8 (Unicode Transformation Format - 8-bit) is the most commonly used encoding because it supports a wide range of characters, including non-Latin alphabets and special symbols.
+This ensures the file can handle any text input without corruption or errors.
+    standalone="yes":
+Indicates that the XML document is self-contained and does not rely on external resources (e.g., a separate DTD - Document Type Definition file).
+This makes the document easier to handle, as all necessary information is included within itself.
+    ?>:
+Marks the end of the XML declaration.
+
+
+
+<types>:
+The <types> tag acts as the container for all item definitions in the file. It is the root element, meaning it is the overarching structure that encapsulates every <type> entry.
+Every individual item is defined within the <types> element using the <type> tags. Without <types>, the file would lack the structure necessary to organize the various items it describes.
+Think of <types> as the main folder holding all item data, ensuring everything is neatly grouped and accessible for the game to process. It signals the beginning and end of all item-related configurations within the file.
+
+
+
+<type name="CodeLock">:
+This tag begins the definition for a specific item named "CodeLock."
+The attribute name="CodeLock" serves as the unique identifier for this item. It ensures that the game engine or server can recognize and differentiate this item from others in the configuration.
+All parameters and characteristics of the "CodeLock" item, such as its spawning behavior, quantity limits, and usage contexts, are defined within this <type> block.
+In essence, this line acts as the "header" or starting point for all the configurations related to the "CodeLock" item. It's like assigning a title to a section that exclusively describes how the "CodeLock" behaves in the game world.
+
+
+
+<nominal>80</nominal>:
+This tag sets the desired quantity of "CodeLock" items in the game world.
+The value of 80 means the game server will attempt to maintain a steady population of 80 instances of this item across the map at any given time.
+If the current number of "CodeLock" items drops below this target (due to player interaction or despawning), the server may spawn new ones, provided other conditions (like <max> and <min> limits) allow it.
+In simple terms, the <nominal> value acts as the baseline or target count for this item, ensuring it remains appropriately available for gameplay balance.
+
+
+
+<max>100</max>:
+This tag defines the upper limit for the number of "CodeLock" items that can exist in the game world at the same time.
+The value 100 means the game server will ensure that no more than 100 instances of this item are present on the map, regardless of restocking or spawning attempts.
+Even if the number of items drops below the <nominal> target, the system will respect this limit and never allow the total count to exceed 100.
+Essentially, <max> acts as a hard cap for the item's population, ensuring balance in gameplay and preventing oversaturation. It complements <nominal> and <min> to create structured item-spawning rules.
+
+
+
+<min>50</min>
+This tag establishes the minimum number of "CodeLock" items that should exist on the map at any given time.
+If the count of "CodeLock" items falls below the specified 50, the game's server will automatically spawn additional items to reach or exceed this threshold.
+This ensures that players always have a basic availability of the item, preventing scenarios where the item becomes too rare or entirely inaccessible.
+It acts as a safeguard for game balance, ensuring that the minimum quantity is maintained to support smooth gameplay.
+
+
+
+<lifetime>7200</lifetime>:
+This tag determines how long the "CodeLock" item remains active in the game world after it has spawned, measured in seconds.
+Duration: The value of 7200 seconds equates to 2 hours.
+Effect: If the item is not interacted with by players or affected by other game dynamics (e.g., picked up or moved), it will automatically disappear from the game world after 2 hours.
+Purpose: This helps maintain the flow and balance of the game by ensuring items don't clog up the environment indefinitely.
+Essentially, this mechanism is key for dynamic item management and creates an ever-changing, engaging gameplay experience.
+
+
+
+<restock>0</restock>:
+This determines how quickly the item (in this case, "CodeLock") is restocked or replenished after being removed from the game world.
+The value of 0 means restocking is disabled.
+This implies that once the "CodeLock" item is consumed, picked up, or removed from the map, it will not automatically respawn through the restocking system.
+The game will rely on other mechanics, such as server restarts or manual administrative actions, to bring this item back into circulation.
+This setting effectively halts any automatic replacement or spawning process tied specifically to restocking, leaving its availability controlled by external factors.
+
+
+
+<quantmin>-1</quantmin> and <quantmax>-1</quantmax>
+These tags define the minimum and maximum quantity levels of an item in the game world.
+<quantmin>: Sets the minimum quantity of an item that can exist.
+<quantmax>: Sets the maximum quantity of an item that can exist.
+When the value is set to -1 for both, it indicates that no specific limits are enforced on the item's quantity.
+This means the game allows the number of these items to fluctuate dynamically, without imposing any hard constraints.
+Items with this setting are typically left unrestricted to offer more flexibility in how they spawn or exist in the game world.
+This approach is often used for items where precise quantity control isn’t critical, keeping gameplay more open-ended and adaptive.
+
+
+
+<cost>100</cost>:
+This tag defines the relative cost or value of the "CodeLock" item within the game's loot economy system.
+Value Indicator: The value 100 represents how "expensive" or "valuable" the item is compared to other items in the game. Higher values often signify greater rarity or importance.
+Purpose: This cost may be used by the server or game mechanics to determine priorities for item spawning, distribution, or availability.
+Impact: Items with a higher cost might:
+Appear less frequently in loot tables.
+Require more effort to obtain (e.g., through crafting, trading, or exploration).
+In summary, <cost> is a balancing tool that helps define an item's scarcity and worth, impacting how players perceive and interact with it in the game world.
+
+
+
+<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>:
+This tag specifies additional properties and rules for how the item interacts with various elements in the game world. These values being 0 for off and 1 for on:
+count_in_cargo="0": ---------------------- The item is excluded from being counted when stored inside cargo containers, such as backpacks or crates.
+count_in_hoarder="0": -------------------- The item is excluded from being counted in hoarder inventories, meaning it won't contribute to hoarder-specific limits or tracking.
+count_in_map="1": ------------------------ The item is actively counted when it exists on the map, such as lying on the ground or placed in world environments.
+count_in_player="0": --------------------- The item is excluded from being counted in player inventories; it won’t be tracked as part of items carried by players.
+crafted="0": ----------------------------- Indicates the item cannot be crafted, meaning players can't create it using in-game crafting systems.
+deloot="0": ------------------------------ Ensures the item remains in loot tables, meaning it continues to be available as part of regular loot spawns and is not removed from loot rotation.
+These flags are critical for managing item behavior and availability, ensuring precise control over where and how the item exists in the game world.
+
+
+
+<category name="tools"/> and <category name="containers"/>:
+These tags assign the item to specific categories within the game world, helping to define its function and purpose:
+<category name="tools"/>: This categorizes the item as a tool, suggesting it has practical or functional applications in the game. Tools may include items used for crafting, building, or other in-game tasks.
+<category name="containers"/>: This categorizes the item as a container, meaning it can store or hold other items. Containers typically function as storage spaces, allowing players to organize and transport their inventory more efficiently.
+These categories allow the game to appropriately manage and classify the item, ensuring it integrates seamlessly into relevant systems and gameplay mechanics.
+
+
+
+<usage name="Military"/>:
+This tag categorizes the item into the Military usage group, impacting where and how the item is integrated into the game:
+Purpose: The tag signifies that the item is relevant to military-themed gameplay elements, such as weapons, gear, or other supplies typically used in combat or survival scenarios.
+Spawn Locations: Items marked with <usage name="Military"/> are more likely to appear in areas like military bases, outposts, or high-security zones, which often offer high-risk, high-reward gameplay.
+Gameplay Mechanics: By associating the item with the Military category, it ensures that it aligns with the game's loot table for military-focused regions. This could influence its rarity and frequency in those specific areas.
+Immersive Functionality: The categorization helps maintain thematic consistency, as these items contribute to the strategic challenges and rewards of exploring military zones.
+In summary, this tag plays a key role in directing item distribution and enhancing the immersive survival experience tied to military locations in the game.
+
+
+
+<value name="Tier1"/>:
+This tag assigns the item to the Tier 1 loot category within the game, which determines where the item can spawn and how it integrates into the loot economy:
+Purpose: The tag indicates that the item belongs to Tier 1, typically reserved for beginner-level or low-value loot. These items are essential for players who are just starting out or exploring safer, less challenging areas.
+Spawn Locations: Items classified as Tier 1 are more likely to appear in low-risk areas like towns, villages, or civilian locations, as opposed to military zones or high-tier areas.
+Rarity & Accessibility: Tier 1 items are generally more common, ensuring they are accessible for players during early gameplay stages, and helping establish a sense of progression as players transition to higher-tier loot.
+Game Balance: By assigning items to specific tiers, the game creates a structured loot distribution system that balances risk and reward across different map zones.
+This tag helps the game manage item spawning effectively, ensuring Tier 1 items provide essential resources for survival while maintaining a logical progression to more advanced items in higher tiers.
+
+
+
+</type>:
+The </type> tag is an XML closing tag. It signals the end of all information defined for the "CodeLock" item, which was started by the corresponding <type name="CodeLock"> opening tag. In XML, every opening tag must have a
+matching closing tag, and in this case, everything related to "CodeLock" (such as its properties, categories, usage, etc.) resides between <type name="CodeLock"> and </type>. This ensures the structure is well-formed and organized.
+
+
+
+</types>:
+The </types> tag is the closing tag for the root element <types>. In XML, every opening tag needs a matching closing tag to properly structure the data. Since <types> is the top-most element in this file, </types> marks the end of the
+entire XML document. It essentially signifies that all types (in this case, including "CodeLock" and any other items that could be added) are fully defined, and no further content exists beyond this point. This closing tag ensures the XML
+document is complete and valid.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
