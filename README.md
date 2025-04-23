@@ -1,2 +1,2 @@
-Click on everything about types to see the detailed explanations of the types
+Click on Everything about Types to see the detailed explanations of the types
 This line ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// represents different sections in the explanation.
